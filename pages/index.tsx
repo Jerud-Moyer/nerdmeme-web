@@ -163,12 +163,12 @@ const funpage = () => {
   }, [customMemeOrder])
 
   const handleGetMeme = (): void => {
-    if(tutorialStage === 1) advanceTutorial(2)
-    if(tutorialStage === 3) advanceTutorial(4)
-    if(tutorialStage === 5) advanceTutorial(6)
     if(memeMode === 'custom' && Object.values(customMemeOrder).includes('')) {
       return notify('You must select a universe for each category!')
     }
+    if(tutorialStage === 1) advanceTutorial(2)
+    if(tutorialStage === 3) advanceTutorial(4)
+    if(tutorialStage === 5) advanceTutorial(6)
     if(memeMode === 'create') {
       if(createMemeOrder.image === '' || createMemeOrder.quote === '') {
         return notify('You must at least upload an image and write in a quote to create a meme!')
@@ -283,8 +283,6 @@ const funpage = () => {
   }
 
   const advanceTutorial = (num: number): void => {
-    console.log('cur stage => ', tutorialStage)
-    console.log('new-tut-stage => ', num)
     if(num === 1) {
       setMemeMode('classic')
     }
