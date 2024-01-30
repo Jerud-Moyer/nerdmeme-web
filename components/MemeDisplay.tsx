@@ -187,7 +187,7 @@ const MemeDisplay:FunctionComponent<Props> = ({
               `}
             >
               <img
-                className="max-h-[100%] max-w-fill object-cover"
+                className="block mx-auto max-h-[100%] max-w-fill object-cover"
                 src={image} 
               />
             </div>
