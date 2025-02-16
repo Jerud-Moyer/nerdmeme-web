@@ -49,7 +49,7 @@ const blankMeme: Meme = {
 const funpage = () => {
   const memeRef = useRef<HTMLDivElement | null>(null)
   const [meme, setMeme] = useState<Meme | null>(null)
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
   const [memeMode, setMemeMode] = useState<string>('classic')
   const [memeTheme, setMemeTheme] = useState<string>('original')
   const [removeTempImage, setRemoveTempImage] = useState<boolean>(false)
@@ -283,8 +283,6 @@ const funpage = () => {
   }
 
   const advanceTutorial = (num: number): void => {
-    console.log('cur stage => ', tutorialStage)
-    console.log('new-tut-stage => ', num)
     if(num === 1) {
       setMemeMode('classic')
     }
@@ -656,9 +654,9 @@ const funpage = () => {
           </div>
         }
         { loading && 
-          <div className='text-3xl flex flex-col items-center justify-center'>
+          <div className='text-3xl flex flex-col items-center justify-center '>
             <p>Meme Generating!</p>
-            <Box sx={{ width: '100%' }}>
+            <Box sx={{ width: '100%', height: '400px' }}>
               <LinearProgress />
             </Box>
           </div>

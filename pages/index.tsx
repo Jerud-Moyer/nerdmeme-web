@@ -654,7 +654,7 @@ const funpage = () => {
           </div>
         }
         { loading && 
-          <div className='text-3xl flex flex-col items-center justify-center'>
+          <div className='text-3xl flex flex-col items-center justify-center min-h-[400px] transition-all'>
             <p>Meme Generating!</p>
             <Box sx={{ width: '100%' }}>
               <LinearProgress />
